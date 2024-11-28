@@ -1,0 +1,118 @@
+---
+import Container from "./Container.astro";
+import Bercovich from "../assets/images/brands/bercovich.jpeg";
+import Graf from "../assets/images/brands/casaGraf.jpeg";
+import Elamigo from "../assets/images/brands/elAmigo.jpeg";
+import Vet from "../assets/images/brands/EstiloCanino.jpeg";
+import Farmacia from "../assets/images/brands/fdelpueblo.jpeg";
+import Lidherma from "../assets/images/brands/Lidherma.jpeg";
+import Mardelplak from "../assets/images/brands/mardelplak.jpeg";
+import Stud from "../assets/images/brands/stud.jpeg";
+import Villar from "../assets/images/brands/villarMotod.jpeg";
+import { string } from "astro:schema";
+---
+
+<div id="HorinzontalInfiniteBrands" class="HorinzontalInfiniteBrands">
+  <Container>
+    <div class="relative font-inter antialiased">
+      <main
+        class="relative flex flex-col justify-center bg-slate-900 overflow-hidden containerSectionBrands"
+      >
+        <div class="w-full max-w-5xl mx-auto px-4 md:px-6">
+          <div class="text-center">
+            <!-- Logo Carousel animation  -->
+            <div
+              x-data="{}"
+              x-init="$nextTick(() => {
+                            let ul = $refs.logos;
+                            ul.insertAdjacentHTML('afterend', ul.outerHTML);
+                            ul.nextSibling.setAttribute('aria-hidden', 'true');
+                        })"
+              class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+            >
+              <ul
+                x-ref="logos"
+                class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infiniteScroll"
+              >
+                <li>
+                  <img src="/images/brands/bercovich.jpeg" alt="Bercovich" />
+                </li>
+                <li>
+                  <img src="/images/brands/casaGraf.jpeg" alt="Casa Graf" />
+                </li>
+                <li>
+                  <img
+                    src="/images/brands/elAmigo.jpeg"
+                    alt="el Amigo Corralon"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="/images/brands/EstiloCanino.jpeg"
+                    alt="Estilo Canino"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="/images/brands/fdelpueblo.jpeg"
+                    alt="Farmacia del Pueblo"
+                  />
+                </li>
+                <li>
+                  <img src="/images/brands/Lidherma.jpeg" alt="Lidherma" />
+                </li>
+                <li>
+                  <img src="/images/brands/marderplak.jpeg" alt="Marderplack" />
+                </li>
+                <li>
+                  <img src="/images/brands/stud.jpeg" alt="stud" />
+                </li>
+                <li>
+                  <img
+                    src="/images/brands/villarMotod.jpeg"
+                    alt="Villar Motos"
+                  />
+                </li>
+              </ul>
+            </div>
+            <!-- End: Logo Carousel animation  -->
+          </div>
+        </div>
+      </main>
+    </div>
+  </Container>
+</div>
+
+<style>
+  .HorinzontalInfiniteBrands {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .containerSectionBrands {
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 245px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ul li img {
+    width: 160px;
+    border-radius: 2rem;
+    -webkit-filter: opacity(0.5);
+  }
+
+  @media only screen and (max-width: 768px) {
+    .HorinzontalInfiniteBrands {
+      margin-bottom: 3rem !important;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .HorinzontalInfiniteBrands {
+      margin-bottom: 13rem !important;
+    }
+  }
+</style>

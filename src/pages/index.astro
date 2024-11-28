@@ -1,0 +1,27 @@
+---
+import Stats from "../components/Stats.astro";
+import Features from "../components/Features.astro";
+import HeroSection from "../components/HeroSection.astro";
+import Layout from "../layouts/Layout.astro";
+
+import CallToAction from "../components/CallToAction.astro";
+import Cta from "../components/Cta.astro";
+import HorizontalInfiniteBrands from "../components/HorizontalInfiniteBrands.astro";
+
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import "@fontsource/roboto/900.css";
+---
+
+<Layout title="Mensajes - Cadeteria" description="">
+  <main class="space-y-40 mb-40">
+    <HeroSection />
+    <HorizontalInfiniteBrands />
+    <Features />
+    <Cta />
+    <Stats />
+
+    <CallToAction />
+  </main>
+</Layout>

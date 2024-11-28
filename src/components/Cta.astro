@@ -1,0 +1,137 @@
+---
+import Container from "./Container.astro";
+---
+
+<div class="CtaContainer" style="background-color: black;">
+  <Container>
+    <div class="grid grid-cols-2 justify-center items-center movilCTA">
+      <div
+        class="content flex justify-center items-center m-auto flex-col gap-5 marginMovil"
+      >
+        <h3
+          class="text-5xl text-white font-bold"
+          style="text-shadow: 4px 3px #fa001a;"
+        >
+          Descarga nuestra APP
+        </h3>
+        <h4
+          class="text-3xl font-bold fadeInUp"
+          style="color: #fa001a;;
+    opacity: 0.90;"
+        >
+          ¡Tus envios mas baratos!
+        </h4>
+        <p class="text-center text-gray-200">
+          Agiliza tus envios descargandote nuestra App, <br /> cotizá tus envios
+          al instante y obtene un seguimiento de cada envio.
+        </p>
+
+        <div
+          class="mt-4 flex flex-wrap justify-start gap-y-4 gap-x-6 boton-header"
+        >
+          <a
+            href="https://play.google.com/store/apps/details?id=com.nuggosoft.mensajesapp&hl=es_AR"
+            class="relative flex h-12 w-full items-center justify-center px-8 py-6 before:absolute before:inset-0 before:rounded-full before:bg-[#fa001a] before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+          >
+            <span class="relative text-base font-semibold text-white"
+              >Descargar App</span
+            >
+          </a>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.nuggosoft.mensajesapp&hl=es_AR"
+            class="relative flex h-12 w-full items-center justify-center px-8 py-6 before:absolute before:inset-0 before:rounded-full before:border-white before:border-2 before:bg-primary/10 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:bg-gray-800 sm:w-max"
+          >
+            <span
+              class="relative text-base font-semibold text-white dark:text-white"
+              >Descargar App cadete</span
+            >
+          </a>
+          <!-- <a
+                      href="#"
+                      class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-primary/10 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max"
+                    >
+                      <span
+                        class="relative text-base font-semibold text-primary dark:text-white"
+                        >Learn more</span
+                      >
+                    </a> -->
+        </div>
+      </div>
+      <div class="container imageMovil">
+        <img class="fadeInUp" src="/images/pagina/CTAPP3.png " alt="" />
+      </div>
+    </div>
+  </Container>
+</div>
+
+<style>
+  @-webkit-keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    -webkit-animation-duration: 2s; /* Cambia la duración a 2 segundos */
+    animation-duration: 2s;
+  }
+  @media only screen and (max-width: 768px) {
+    .CtaContainer {
+      height: 100vh;
+    }
+
+    .movilCTA {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .marginMovil {
+      margin-top: 5rem;
+      text-align: center;
+    }
+    .content {
+      order: 2;
+    }
+
+    .imageMovil {
+      order: 1;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .CtaContainer {
+      height: 98vh;
+    }
+  }
+
+  @media only screen and (max-width: 360px) {
+    .CtaContainer {
+      height: 115vh;
+    }
+  }
+</style>

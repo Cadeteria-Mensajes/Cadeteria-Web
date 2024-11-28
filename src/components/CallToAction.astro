@@ -1,0 +1,184 @@
+---
+import Container from "./Container.astro";
+---
+
+<div class="relative py-16 contenedorCTA rounded-xl shadow-2xl">
+  <div
+    aria-hidden="true"
+    class="absolute inset-0 h-max w-full m-auto grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"
+  >
+    <div class="blur-[106px] h-32 bg-gradient-to-r from-[#fa001a]"></div>
+  </div>
+  <Container>
+    <div class="mt-6 m-auto space-y-6">
+      <h1 class="text-center text-4xl font-bold text-white md:text-5xl">
+        Vos vendes, nosotros entregamos. <br /> Solicita tu envío.
+      </h1>
+      <!-- <p class="text-center text-xl text-white">¡Contactanós!</p> -->
+
+      <form id="whatsappForm" class="mx-auto mt-16 max-w-xl sm:mt-20">
+        <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+          <div>
+            <label
+              for="desde"
+              class="block text-sm font-semibold leading-6 text-white"
+              >Desde</label
+            >
+            <div class="mt-2.5">
+              <input
+                type="text"
+                name="desde"
+                id="desde"
+                autocomplete="off"
+                class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div>
+            <label
+              for="hasta"
+              class="block text-sm font-semibold leading-6 text-white"
+              >Hasta</label
+            >
+            <div class="mt-2.5">
+              <input
+                type="text"
+                name="hasta"
+                id="hasta"
+                autocomplete="off"
+                class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div class="sm:col-span-2">
+            <label
+              for="company"
+              class="block text-sm font-semibold leading-6 text-white"
+              >Nombre y Apellido</label
+            >
+            <div class="mt-2.5">
+              <input
+                type="text"
+                name="company"
+                id="company"
+                autocomplete="organization"
+                class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div class="sm:col-span-2">
+            <label
+              for="email"
+              class="block text-sm font-semibold leading-6 text-white"
+              >Email</label
+            >
+            <div class="mt-2.5">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                autocomplete="email"
+                class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div class="sm:col-span-2">
+            <label
+              for="phone-number"
+              class="block text-sm font-semibold leading-6 text-white"
+              >Número de telefono</label
+            >
+            <div class="relative mt-2.5">
+              <input
+                type="tel"
+                name="phone-number"
+                id="phone-number"
+                autocomplete="tel"
+                class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div class="sm:col-span-2">
+            <label
+              for="message"
+              class="block text-sm font-semibold leading-6 text-white"
+              >Indicaciones</label
+            >
+            <div class="mt-2.5">
+              <textarea
+                name="message"
+                id="message"
+                rows="4"
+                class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="mt-10 flex justify-end">
+          <button
+            type="submit"
+            class="rounded-full items-center justify-center px-8 before:rounded-full before:bg-[#fa001a] before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 bg-[#fa001a] py-2.5 text-center text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 text-base font-semibold"
+            >Enviar pedido por WhatsApp</button
+          >
+        </div>
+      </form>
+
+      <script>
+        document
+          .getElementById("whatsappForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Obtener los valores del formulario
+            var desde = document.getElementById("desde").value;
+            var hasta = document.getElementById("hasta").value;
+            var company = document.getElementById("company").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone-number").value;
+            var message = document.getElementById("message").value;
+
+            // Formar el mensaje de WhatsApp
+            var whatsappMessage = `Hola Mensajes Cadetería, quisiera hacer un envío desde ${desde} hasta ${hasta}. A nombre de ${company}. Email: ${email}. Teléfono: ${phone}. Indicaciones: ${message}`;
+
+            // Número de WhatsApp al que se enviará (formato internacional sin espacios ni signos de puntuación)
+            var phoneNumber = "3814739347"; // Reemplazar por tu número
+
+            // Crear el enlace de WhatsApp
+            var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+            // Redirigir a WhatsApp
+            window.open(whatsappURL, "_blank");
+          });
+      </script>
+    </div>
+  </Container>
+</div>
+
+<style>
+  .contenedorCTA {
+    background: #000000;
+    width: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-block: 10rem;
+    padding: 5rem;
+
+    border-bottom: 1rem solid #fa001a;
+  }
+
+  .tag {
+    --tw-bg-opacity: 1;
+    background-color: rgba(148, 163, 184, 0.475);
+    border: 1px solid #80808047;
+    font-size: small;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .contenedorCTA {
+      width: auto;
+      padding: 3rem;
+    }
+  }
+</style>
